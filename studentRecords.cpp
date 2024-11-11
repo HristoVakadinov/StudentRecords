@@ -71,8 +71,10 @@ void writeToFile(const vector<Student> &students, const string &filename, const 
     if (file.is_open()) {
         file << "Студенти между 18 и 26 години:\n";
         for (const Student &s : students) {
-            file << s << endl;
-        }
+            if (s.getAge() >= 18 && s.getAge() <= 26){
+                file << s << endl;
+            }
+}
         file << endl; 
         file << "Студент с най-висок успех:\n" << topStudent << endl; 
         file.close();
